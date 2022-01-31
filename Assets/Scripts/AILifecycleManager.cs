@@ -10,7 +10,7 @@ public class AILifecycleManager : MonoBehaviour
     //this is a list of all the AI objects in the scene
     public List<GameObject> aiInstances = new List<GameObject>();
     
-    void Start()
+    void Awake()
     {
         Service.AILifecycleManagerInGame = this;
     }
