@@ -245,7 +245,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1847964961}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &697402212
 MonoBehaviour:
@@ -294,6 +294,9 @@ MonoBehaviour:
   NumberOfCollectables: 5
   gridSizeX: 36
   gridSizeZ: 18
+  AiPrefab: {fileID: 7558433282025445735, guid: 155ca87fd6dd94bb6b2ac437e1e4e34e, type: 3}
+  aiMoveSpeed: 3
+  aiRotationSpeed: 3
 --- !u!4 &822792154
 Transform:
   m_ObjectHideFlags: 0
@@ -337,7 +340,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1847964961}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &860700709
 MonoBehaviour:
@@ -647,53 +650,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 1
---- !u!1 &1829930754
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1829930755}
-  - component: {fileID: 1829930756}
-  m_Layer: 0
-  m_Name: AI Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1829930755
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1829930754}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1847964961}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1829930756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1829930754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00f0c12b94d6c4b4f9da3a327d0ce523, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AiPrefab: {fileID: 7558433282025445735, guid: 155ca87fd6dd94bb6b2ac437e1e4e34e, type: 3}
-  aiMoveSpeed: 2
-  aiRotationSpeed: 0
-  aiInstances: []
 --- !u!1 &1847964959
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,7 +659,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1847964961}
-  - component: {fileID: 1847964960}
   m_Layer: 0
   m_Name: Services
   m_TagString: Untagged
@@ -711,18 +666,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1847964960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1847964959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bd3f7aa32cc247a7abd1f8c8c4512d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1847964961
 Transform:
   m_ObjectHideFlags: 0
@@ -734,7 +677,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1829930755}
   - {fileID: 860700708}
   - {fileID: 697402211}
   m_Father: {fileID: 0}

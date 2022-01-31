@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Service : MonoBehaviour
+public static class Service
 {
     //This script is the services locator for the game!
     public static PlayerManager playerManagerInGame;
-    public static AILifecycleManager AILifecycleManagerInGame;
     public static GameManager GameManagerInGame;
     public static CollectableLifecycleManager CollectableManagerInGame;
-
+    public static AILifecycleManager AILifecycleManagerInGame;
+    public static void InitializationService()
+    {
+        Service.AILifecycleManagerInGame = new AILifecycleManager();
+    }
+    
 }

@@ -5,30 +5,19 @@ using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class AILifecycleManager : MonoBehaviour
+public class AILifecycleManager
 {
-    
-    public GameObject AiPrefab;
-    public float aiMoveSpeed;
-    public float aiRotationSpeed;
-    
     //this is a list of all the AI objects in the scene
     public List<GameObject> aiInstances = new List<GameObject>();
     
-    void Awake()
+    /*void Awake()
     {
         Service.AILifecycleManagerInGame = this;
-    }
-
-    public void FixedUpdate()
-    {
-        InstanceUpdatePosition();
-    }
+    }*/
 
     //this creates each instance of the AI
-    public void InstanceCreation()
+    public void InstanceCreation(GameObject newInstance)
     {
-        var newInstance = Instantiate<GameObject>(AiPrefab);
         var newPosition = new Vector3(
             Random.Range(-Service.GameManagerInGame.gridSizeX, Service.GameManagerInGame.gridSizeX),
             newInstance.transform.position.y,
@@ -63,7 +52,7 @@ public class AILifecycleManager : MonoBehaviour
         
     }
     
-    public void InstanceUpdatePosition()
+    public void InstanceUpdatePosition(float aiMoveSpeed)
     {
         for (int i=0; i < aiInstances.Count; i++)
         {
@@ -71,15 +60,4 @@ public class AILifecycleManager : MonoBehaviour
             aiRigidbody.AddForce(aiRigidbody.transform.forward * aiMoveSpeed);
         }
     }
-    
-    public void Destruction()
-    {
-        
-    }
-
-    public void InstanceTracking()
-    {
-        
-    }
-   
 }
