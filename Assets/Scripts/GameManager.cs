@@ -7,15 +7,23 @@ public class GameManager : MonoBehaviour
 
     public int NumberOfAiInstances;
     public int NumberOfCollectables;
+
+    public float gridSizeX;
+    public float gridSizeZ;
     
     // Start is called before the first frame update
     void Start()
     {
         Service.GameManagerInGame = this;
 
-        for (int i = 0; i != NumberOfAiInstances - 1; i++)
+        for (int i = 0; i != NumberOfAiInstances; i++)
         {
             Service.AILifecycleManagerInGame.InstanceCreation();
+        }
+        
+        for (int i = 0; i != NumberOfCollectables; i++)
+        {
+            Service.CollectableManagerInGame.SpawnCollectable();
         }
     }
 

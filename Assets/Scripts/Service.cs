@@ -8,5 +8,6 @@ public class Service : MonoBehaviour
     public static PlayerManager playerManagerInGame;
     public static AILifecycleManager AILifecycleManagerInGame;
     public static GameManager GameManagerInGame;
+    public static CollectableLifecycleManager CollectableManagerInGame;
 
 }
