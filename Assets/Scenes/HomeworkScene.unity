@@ -290,8 +290,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b33ac974697bf43caa56d2cf1357a549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfAiInstances: 5
-  NumberOfCollectables: 15
+  NumberOfAiInstances: 10
+  NumberOfCollectables: 25
   gridSizeX: 34
   gridSizeZ: 18
   AiPrefab: {fileID: 7558433282025445735, guid: 155ca87fd6dd94bb6b2ac437e1e4e34e, type: 3}
