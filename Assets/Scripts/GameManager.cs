@@ -31,7 +31,20 @@ public class GameManager : MonoBehaviour
             var newInstance = Instantiate<GameObject>(AiPrefab);
             Service.AILifecycleManagerInGame.InstanceCreation(newInstance);
         }
-        
+
+        SpawnNumberOfCollectables();
+    }
+
+    public void Update()
+    {
+        if (Service.CollectableManagerInGame.collectableInstances.Count == 0)
+        {
+            SpawnNumberOfCollectables();
+        }
+    }
+
+    public void SpawnNumberOfCollectables()
+    {
         for (int i = 0; i != NumberOfCollectables; i++)
         {
             Service.CollectableManagerInGame.SpawnCollectable();

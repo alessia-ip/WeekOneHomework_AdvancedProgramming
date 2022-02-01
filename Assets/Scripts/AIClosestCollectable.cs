@@ -9,6 +9,14 @@ public class AIClosestCollectable : MonoBehaviour
 
     private void Update()
     {
+        GetTheClosestCollectable();
+        
+    }
+
+    public void GetTheClosestCollectable()
+    {
+        if (Service.CollectableManagerInGame.collectableInstances.Count == 0) return;
+        
         if (closestCollectable == null)
         {
             Service.AILifecycleManagerInGame.GetClosestCollectable(this.gameObject);
