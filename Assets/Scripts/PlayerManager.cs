@@ -16,6 +16,7 @@ public class PlayerManager : MonoBehaviour
     {
         Service.playerManagerInGame = this;
         playerRigidbody = player.GetComponent<Rigidbody>();
+        player.AddComponent<DestroyCollectable>();
     }
 
     // Update is called once per frame

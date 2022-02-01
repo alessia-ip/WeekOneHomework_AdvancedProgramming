@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NumberOfAiInstances: 5
-  NumberOfCollectables: 5
+  NumberOfCollectables: 10
   gridSizeX: 36
   gridSizeZ: 18
   AiPrefab: {fileID: 7558433282025445735, guid: 155ca87fd6dd94bb6b2ac437e1e4e34e, type: 3}

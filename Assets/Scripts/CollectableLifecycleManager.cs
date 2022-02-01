@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
+using Random = UnityEngine.Random;
 
 public class CollectableLifecycleManager : MonoBehaviour
 {
@@ -26,5 +28,22 @@ public class CollectableLifecycleManager : MonoBehaviour
         );
         newCollectable.transform.position = newPosition;
         collectableInstances.Add(newCollectable);
-    } 
+    }
+
+    public void destroyCollectable(GameObject collectable)
+    {
+        //we have to fix the list for when the collectable is destroyed
+        for (int i = 0; i < collectableInstances.Count; i++)
+        {
+            if (collectableInstances[i] == collectable)
+            {
+                collectableInstances.RemoveAt(i);
+                Destroy(collectable);
+                return;
+            }
+        }
+        
+        
+    }
+    
 }

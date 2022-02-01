@@ -13,5 +13,10 @@ public class AIClosestCollectable : MonoBehaviour
         {
             Service.AILifecycleManagerInGame.GetClosestCollectable(this.gameObject);
         }
+        else
+        { 
+            Service.AILifecycleManagerInGame.InstanceUpdateDirection(this.gameObject, closestCollectable);
+        }
     }
+    
 }

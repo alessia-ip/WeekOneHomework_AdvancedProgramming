@@ -25,6 +25,7 @@ public class AILifecycleManager
             );
         newInstance.transform.position = newPosition;
         newInstance.AddComponent<AIClosestCollectable>();
+        newInstance.AddComponent<DestroyCollectable>();
         aiInstances.Add(newInstance);
     }
 
@@ -47,9 +48,9 @@ public class AILifecycleManager
         aiInstance.GetComponent<AIClosestCollectable>().closestCollectable = tempCollectableHolder;
     }
     
-    public void InstanceUpdateDirection(GameObject aiInstance)
+    public void InstanceUpdateDirection(GameObject aiInstance, GameObject collectable)
     {
-        
+        aiInstance.transform.LookAt(collectable.transform);
     }
     
     public void InstanceUpdatePosition(float aiMoveSpeed)
