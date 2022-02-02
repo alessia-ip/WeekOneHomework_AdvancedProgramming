@@ -14,6 +14,7 @@ public static class Service
     public static void InitializationService()
     {
         Service.AILifecycleManagerInGame = new AILifecycleManager();
+        Service.CollectableManagerInGame = new CollectableLifecycleManager();
     }
     
 }

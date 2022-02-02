@@ -19,6 +19,9 @@ public class GameManager : MonoBehaviour
     public float aiMoveSpeed;
     public float aiRotationSpeed;
 
+    [Header("Collectables")]
+    public GameObject collectablePrefab;
+    
     private void Awake()
     {
         //Here we initialize non-monobehaviour scripts, in the services script
@@ -56,9 +59,11 @@ public class GameManager : MonoBehaviour
     //This function is to spawn collectables into the scene, based on the number we defined
     public void SpawnNumberOfCollectables()
     {
+        //we instantiate a new collectable prefab
         for (int i = 0; i != NumberOfCollectables; i++)
         {
-            Service.CollectableManagerInGame.SpawnCollectable();
+            var newCollectable = Instantiate<GameObject>(collectablePrefab);
+            Service.CollectableManagerInGame.SpawnCollectable(newCollectable);
         }
     }
     
@@ -68,5 +73,9 @@ public class GameManager : MonoBehaviour
         Service.AILifecycleManagerInGame.InstanceUpdatePosition(aiMoveSpeed);
     }
 
+    public void DestroyObject(GameObject ObjectToDestroy)
+    {
+        Destroy(ObjectToDestroy); // then we destroy the gameobject
+    }
     
 }

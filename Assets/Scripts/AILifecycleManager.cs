@@ -72,4 +72,20 @@ public class AILifecycleManager
             aiRigidbody.AddForce(aiRigidbody.transform.forward * aiMoveSpeed);
         }
     }
+
+    public void GetCollectableOrDirection(GameObject closestCollectable, GameObject RequestingAiInstance)
+    {
+        //if there's NO collectables in the scene, we escape this function to avoid an error
+        if (Service.CollectableManagerInGame.collectableInstances.Count == 0) return;
+
+        if (closestCollectable == null)
+        {
+            GetClosestCollectable(RequestingAiInstance);
+        }
+        else //otherwise, we want to update our direction to face the collectable in question
+        { 
+            InstanceUpdateDirection(RequestingAiInstance, closestCollectable);
+        }
+    }
+    
 }

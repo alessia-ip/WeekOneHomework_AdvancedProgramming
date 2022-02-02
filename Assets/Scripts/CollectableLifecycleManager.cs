@@ -5,25 +5,14 @@ using UnityEngine;
 using UnityEngine.VFX;
 using Random = UnityEngine.Random;
 
-public class CollectableLifecycleManager : MonoBehaviour
+public class CollectableLifecycleManager
 {
-
-    public GameObject collectablePrefab;
-    
     //this is a list of all of our spawned collectables
     public List<GameObject> collectableInstances = new List<GameObject>();
-    
-    void Awake()
-    {
-        //we self assign to the services manager
-        Service.CollectableManagerInGame = this;
-    }
 
     //we spawn collectables with this
-    public void SpawnCollectable()
+    public void SpawnCollectable(GameObject newCollectable)
     {
-        //we instantiate a new collectable prefab
-        var newCollectable = Instantiate<GameObject>(collectablePrefab);
         //we generate a new random position in the play space
         var newPosition = new Vector3(
             Random.Range(-Service.GameManagerInGame.gridSizeX, Service.GameManagerInGame.gridSizeX),
@@ -47,12 +36,10 @@ public class CollectableLifecycleManager : MonoBehaviour
             if (collectableInstances[i] == collectable)
             {
                 collectableInstances.RemoveAt(i); //we remove it from the list, so there isn't a null/missing in our list
-                Destroy(collectable); // then we destroy the gameobject
+                Service.GameManagerInGame.DestroyObject(collectable);
                 return; //and then we escape this since we found what we needed and don't need to cycle through the rest of the list
             }
         }
-        
-        
     }
     
 }
